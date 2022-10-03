@@ -33,6 +33,8 @@ class HomeScreen : ComponentActivity() {
             WhatsApp_cloneTheme {
                 Surface(color = myColour) {
                     HomeView(this)
+                    Watermark {
+                    }
                 }
             }
         }

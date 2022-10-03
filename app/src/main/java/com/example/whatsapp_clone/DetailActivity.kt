@@ -1,6 +1,7 @@
 package com.example.whatsapp_clone
 
 import android.os.Bundle
+import android.text.Layout
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -23,7 +24,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.layout.Placeable
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextOverflow
@@ -32,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.whatsapp_clone.ui.theme.WhatsApp_cloneTheme
 import com.example.whatsapp_clone.ui.theme.myColour
+import java.lang.Math.atan
 
 class DetailActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,11 +48,14 @@ class DetailActivity : ComponentActivity() {
                 Surface(color = myColour) {
                     val chatId = intent.getIntExtra("extra_chatid", 0)
                     DetailView(chatId)
+                    Watermark {}
                 }
             }
         }
     }
 }
+
+
 
 @Composable
 fun DetailView(chatId: Int) {
