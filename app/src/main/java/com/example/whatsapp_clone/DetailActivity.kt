@@ -52,12 +52,17 @@ class DetailActivity : ComponentActivity() {
 @Composable
 fun DetailView(chatId: Int) {
     val chat = DummyData.listChat.filter { it.id == chatId }[0]
-    Scaffold(
-        backgroundColor = Color(0xFFEDEDED),
-        topBar = { MessageTopBar(chat = chat) },
-        bottomBar = { MessageBox() },
-        content = { MessageList() }
-    )
+    Box{
+        Image(painter = painterResource(R.drawable.bg1), contentDescription = null )
+        Scaffold(
+
+            backgroundColor = Color.Transparent,
+            topBar = { MessageTopBar(chat = chat) },
+            bottomBar = { MessageBox() },
+            content = { MessageList() }
+        )
+    }
+
 }
 
 @Composable
