@@ -53,10 +53,9 @@ class DetailActivity : ComponentActivity() {
 fun DetailView(chatId: Int) {
     val chat = DummyData.listChat.filter { it.id == chatId }[0]
     Box{
-        Image(painter = painterResource(R.drawable.bg1), contentDescription = null )
         Scaffold(
 
-            backgroundColor = Color.Transparent,
+            backgroundColor = Color(0xFFe5ddd5),
             topBar = { MessageTopBar(chat = chat) },
             bottomBar = { MessageBox() },
             content = { MessageList() }
